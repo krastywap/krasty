@@ -3,277 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع دراستي | المنصة التعليمية الذكية</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <title>موقع دراستي | المنصة الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --radius: 16px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* الهيدر */
-        header {
-            background: var(--card-bg);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            margin-right: 1.5rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* لوحة المعلومات (Dashboard) */
-        .container {
-            max-width: 1100px;
-            margin: 2rem auto;
-            padding: 0 20px;
-        }
-
-        .dashboard {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 3rem;
-        }
-
-        .info-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .info-card h3 {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .info-card p {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        /* شبكة الصفوف */
-        .section-title {
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-            border-right: 4px solid var(--primary);
-            padding-right: 15px;
-        }
-
-        .grades-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 15px;
-        }
-
-        .grade-btn {
-            background: var(--card-bg);
-            color: var(--text-main);
-            padding: 2rem 1rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            text-align: center;
-            font-weight: 700;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-        }
-
-        .grade-btn:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
-        }
-
-        /* الفوتر */
-        footer {
-            margin-top: 5rem;
-            background: white;
-            padding: 2rem;
-            text-align: center;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .social-links {
-            margin: 1rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        /* للهواتف */
-        @media (max-width: 600px) {
-            header { flex-direction: column; gap: 10px; }
-            nav a { margin: 0 10px; font-size: 0.9rem; }
-            .grades-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        :root { --primary: #5e5ce6; --bg: #f5f5f7; --card: #ffffff; }
+        body { font-family: 'Tajawal', sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        header { background: var(--card); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 20px; }
+        .dashboard { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card { background: var(--card); padding: 20px; border-radius: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .card h3 { font-size: 0.9rem; color: #888; margin-bottom: 10px; }
+        .card p { font-size: 1.2rem; font-weight: bold; color: var(--primary); }
+        .grades-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; }
+        .grade-btn { background: var(--card); border: 2px solid transparent; padding: 25px 10px; border-radius: 15px; text-decoration: none; color: #333; font-weight: bold; transition: 0.3s; text-align: center; }
+        .grade-btn:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-5px); }
+        .loader { border: 4px solid #f3f3f3; border-top: 4px solid var(--primary); border-radius: 50%; width: 20px; height: 20px; animation: spin 2s linear infinite; display: inline-block; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">🎓 دراستي</div>
+        <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">🎓 دراستي</div>
         <nav>
-            <a href="#">الرئيسية</a>
-            <a href="#">الأدوات الذكية</a>
-            <a href="#">آخر الأخبار</a>
+            <a href="#" style="text-decoration: none; color: #333;">الرئيسية</a>
         </nav>
     </header>
 
-    <main class="container">
-        
+    <div class="container">
         <div class="dashboard">
-            <div class="info-card">
-                <h3>📅 التاريخ الحالي</h3>
-                <p id="js-today-date">-- / -- / ----</p>
+            <div class="card">
+                <h3>📅 التاريخ</h3>
+                <p id="date">--</p>
             </div>
-            <div class="info-card">
-                <h3>📖 الفصل الدراسي</h3>
-                <p id="sheet-semester">جاري التحميل...</p>
+            <div class="card">
+                <h3>📖 الفصل</h3>
+                <p id="semester"><span class="loader"></span></p>
             </div>
-            <div class="info-card">
-                <h3>🏖️ الإجازة القادمة</h3>
-                <p id="sheet-holiday">جاري التحميل...</p>
+            <div class="card">
+                <h3>🏖️ الإجازة</h3>
+                <p id="holiday"><span class="loader"></span></p>
             </div>
         </div>
 
-        <h2 class="section-title">اختر صفك الدراسي</h2>
-        <div class="grades-grid" id="grades-container">
-            </div>
-
-    </main>
-
-    <footer>
-        <p>تابعونا على وسائل التواصل الاجتماعي</p>
-        <div class="social-links">
-            <a href="#">Instagram</a>
-            <a href="#">WhatsApp</a>
-            <a href="#">TikTok</a>
-        </div>
-        <p style="font-size: 0.8rem; color: #94a3b8;">© 2026 جميع الحقوق محفوظة لموقع دراستي</p>
-    </footer>
+        <h2 style="margin-bottom: 20px;">الصفوف الدراسية</h2>
+        <div class="grades-grid" id="grades"></div>
+    </div>
 
     <script>
-        /**
-         * 🛑 هام جداً: استبدل الرابط أدناه برابط CSV الخاص بك 
-         * من Google Sheets (نشر على الويب > صيغة CSV)
-         */
-        const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRxLqxpKZuEn4DkcEK3Rp6I-uAanqOpSE-M3oizRSJM9nOfMXyuWyk92GPy0wvm3gOqiYGRlBRI-Sbj/pub?output=csv";
+        // 🛑 استبدل هذا الرابط برابط الـ Web App الذي نسخته من Apps Script
+        const API_URL = "https://script.google.com/macros/s/AKfycbzwr2lztbH27fjhq2yD_4gv1E05mBxLJ9bFVh8EiOSyAgwYGvW2230ziYd3hrIZKB4F-g/exec";
 
-        // 1. تحديث التاريخ تلقائياً بالجافاسكربت
-        function updateDate() {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('js-today-date').innerText = new Date().toLocaleDateString('ar-EG', options);
-        }
+        async function init() {
+            // 1. التاريخ الحالي
+            document.getElementById('date').innerText = new Date().toLocaleDateString('ar-EG');
 
-        // 2. إنشاء أزرار الصفوف برمجياً
-        function generateGradeButtons() {
-            const container = document.getElementById('grades-container');
-            for (let i = 5; i <= 12; i++) {
-                const btn = document.createElement('a');
-                btn.href = `grade.html?level=${i}`;
-                btn.className = 'grade-btn';
-                btn.innerText = `الصف ${i}`;
-                container.appendChild(btn);
+            // 2. إنشاء الصفوف
+            const gradesDiv = document.getElementById('grades');
+            for(let i=5; i<=12; i++) {
+                gradesDiv.innerHTML += `<a href="grade.html?level=${i}" class="grade-btn">الصف ${i}</a>`;
             }
-        }
 
-        // 3. جلب البيانات من Google Sheet
-        async function fetchSheetData() {
+            // 3. جلب البيانات من API
             try {
-                const response = await fetch(CSV_URL);
-                const data = await response.text();
+                const response = await fetch(API_URL);
+                const data = await response.json();
                 
-                // تحليل الـ CSV (تحويله لمصفوفة)
-                const rows = data.split('\n').map(row => row.split(','));
-                
-                // لنفترض أن جدول Config يحتوي على مفتاح وقيمة (Key, Value)
-                // الصف 1: Header (Key, Value)
-                // الصف 2: current_semester, الفصل الثاني
-                // الصف 3: next_holiday_name, إجازة عيد الفطر
-                
-                const config = {};
-                rows.forEach(row => {
-                    if(row[0]) config[row[0].trim()] = row[1] ? row[1].trim() : "";
-                });
-
-                // تحديث العناصر في الصفحة
-                if(config['current_semester']) 
-                    document.getElementById('sheet-semester').innerText = config['current_semester'];
-                
-                if(config['next_holiday_name']) 
-                    document.getElementById('sheet-holiday').innerText = config['next_holiday_name'];
-
-            } catch (error) {
-                console.error("خطأ في جلب بيانات الإكسل:", error);
-                document.getElementById('sheet-semester').innerText = "خطأ في الاتصال";
-                document.getElementById('sheet-holiday').innerText = "تأكد من الرابط";
+                document.getElementById('semester').innerText = data.config.current_semester || "غير محدد";
+                document.getElementById('holiday').innerText = data.config.next_holiday_name || "لا يوجد";
+            } catch (e) {
+                console.error("Error:", e);
+                document.getElementById('semester').innerText = "فشل الاتصال";
             }
         }
 
-        // تشغيل الوظائف عند تحميل الصفحة
-        window.onload = () => {
-            updateDate();
-            generateGradeButtons();
-            // fetchSheetData(); // فعل هذا السطر بعد وضع رابط الـ CSV الحقيقي
-        };
+        init();
     </script>
 </body>
 </html>
